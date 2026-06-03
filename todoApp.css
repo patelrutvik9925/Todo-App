@@ -1,0 +1,190 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #0F172A;
+    --section-color: #1E293B;
+
+    --primary-color: #3B82F6;
+    --primary-hover: #2563EB;
+
+    --text-color: #FFFFFF;
+    --text-secondary: #94A3B8;
+
+    --border-color: #334155;
+    --input-bg: #FFFFFF;
+}
+
+html,
+body{
+    background-color: var(--bg-color);
+    overscroll-behavior: none;
+    min-height: 100vh;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1.5rem;
+}
+
+/* MAIN */
+
+main{
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    width: min(800px, 90%);
+
+    background-color: var(--section-color);
+
+    border: 2px solid var(--border-color);
+
+    border-radius: 20px;
+
+    padding: 2rem;
+
+    text-align: center;
+}
+
+#todo-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#todo-app h1{
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+#todo-app input{
+    width: 100%;
+
+    padding: 1rem;
+
+    border: none;
+    outline: none;
+
+    border-radius: 20px;
+
+    background-color: var(--input-bg);
+
+    color: var(--bg-color);
+
+    font-size: 1rem;
+
+    text-align: center;
+}
+
+#todo-app input::placeholder{
+    color: var(--text-secondary);
+}
+
+/* BUTTONS */
+
+.btn-container{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    margin-top: 2rem;
+}
+
+.todo-btn{
+    background-color: var(--primary-color);
+
+    color: var(--text-color);
+
+    border: none;
+    outline: none;
+
+    border-radius: 20px;
+
+    padding: 0.8rem 1.2rem;
+
+    width: 10rem;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.todo-btn:hover{
+    background-color: var(--primary-hover);
+
+    transform: translateY(-3px);
+}
+
+/* TASKS */
+
+#todo-app h2{
+    color: var(--text-secondary);
+
+    margin-top: 2rem;
+}
+
+#show-tasks{
+    width: 100%;
+
+    min-height: 30vh;
+
+    margin-top: 1.5rem;
+
+    padding: 1.5rem;
+
+    background-color: var(--text-color);
+
+    color: var(--bg-color);
+
+    border-radius: 20px;
+
+    text-align: left;
+}
+
+#show-tasks p{
+    margin-bottom: 0.8rem;
+}
+
+#notification{
+    position: fixed;
+
+    top: 10px;
+
+    background-color: var(--primary-color);
+    color: var(--text-color);
+
+    padding: 15px 25px;
+
+    border-radius: 10px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    transform: translateY(-20px);
+}
+
+#notification.show{
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+#show-tasks:empty::before{
+    content: "No tasks available.";
+    color: var(--text-secondary);
+}
