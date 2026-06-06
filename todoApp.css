@@ -54,6 +54,10 @@ main{
     text-align: center;
 }
 
+.content:hover{
+    box-shadow: 0 0 30px var(--primary-color);
+}
+
 #todo-app{
     display: flex;
     flex-direction: column;
@@ -125,6 +129,8 @@ main{
     background-color: var(--primary-hover);
 
     transform: translateY(-3px);
+
+    box-shadow: 0 0 30px var(--primary-color);
 }
 
 /* TASKS */
